@@ -1,3 +1,6 @@
-fruits = {"apple", "banana", "cherry"}
-more_fruits = ["orange", "mango", "grapes"]
-fruits.update(more_fruits)
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "facebook"}
+
+z = x.isdisjoint(y)
+
+print(z)

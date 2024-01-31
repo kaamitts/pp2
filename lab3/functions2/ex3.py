@@ -4,7 +4,7 @@ def k(movies, category_name):
     for x in movies:
         if x["category"] == category_name:
             print (x["name"])
- 
+    
 movies = [
 {
 "name": "Usual Suspects", 

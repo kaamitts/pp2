@@ -18,6 +18,7 @@ class Point:
     def dist(self):
         distance = math.sqrt((self.x - self.initial_x)**2 + (self.y - self.initial_y)**2)
         return distance
+
 initial_point = Point(float(input("x coordinate: ")), float(input("y coordinate: ")))
 initial_point.show_coordinates()
 x_move = float(input("new x coordinate: "))

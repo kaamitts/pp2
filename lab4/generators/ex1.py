@@ -6,6 +6,9 @@ def squares_up_to_n(n):
             yield x**2
         else: continue 
 n = int(input("Введите число n: "))
-sqare = squares_up_to_n(n)
-while True:
-    print(next(sqare), end=' ')
+square = squares_up_to_n(n)
+try:
+    while True:
+        print(next(square), end=', ')
+except StopIteration:
+    pass

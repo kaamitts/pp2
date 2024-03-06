@@ -2,12 +2,8 @@
 def square_root_after_milliseconds(number, milliseconds):
     start_time = milliseconds # Переводим миллисекунды в секунды
     current_time = 0
-
-    # Цикл, который "ждет" указанное количество миллисекунд
     while current_time < start_time:
-        current_time += 0.00005  # Увеличиваем время на 0.01 секунды
-
-    # После ожидания вычисляем квадратный корень числа
+        current_time += 0.00005
     square_root = number ** 0.5
     return square_root
 

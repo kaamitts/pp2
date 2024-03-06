@@ -1,6 +1,6 @@
 #Write a Python program that invoke square root function after specific milliseconds.
 def square_root_after_milliseconds(number, milliseconds):
-    start_time = milliseconds # Переводим миллисекунды в секунды
+    start_time = milliseconds 
     current_time = 0
     while current_time < start_time:
         current_time += 0.00005

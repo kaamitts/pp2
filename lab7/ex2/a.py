@@ -22,16 +22,6 @@ def play_previous_song():
     pygame.mixer.music.load(_songs[0])
     pygame.mixer.music.play()
 
-_sound_library = {}
-def play_sound(path):
-    global _sound_library
-    sound = _sound_library.get(path)
-    if sound == None:
-        canonicalized_path = path.replace('\\', os.sep)
-        sound = pygame.mixer.Sound(canonicalized_path)
-        _sound_library[path] = sound
-    sound.play()
-
 _songs = ['Jah Khalib – Искал-Нашёл.mp3', 'Jah Khalib – Сжигая дотла.mp3', 'Jah Khalib – Твои сонные глаза.mp3']
 SONG_END = pygame.USEREVENT + 1
 

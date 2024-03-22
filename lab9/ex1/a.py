@@ -16,6 +16,7 @@ SCREEN_HEIGHT = 600
 SPEED = 5
 SCORE = 0
 MONEY = 0
+count = 0
 
 #Созадние текстовый фалов или же просто текстов 
 money = pygame.font.SysFont(None, 20)
@@ -145,6 +146,8 @@ while True:
     if pygame.sprite.spritecollideany(P1, COIN):
         MONEY_WEIGHT = random.randint(1, 3)
         MONEY += MONEY_WEIGHT
+        count += 1
+        SPEED += count%3
         C1.rect.center = C1.empty_space()
         
     pygame.display.update()

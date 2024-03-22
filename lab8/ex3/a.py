@@ -26,7 +26,7 @@ color = WHITE
 eraser = pygame.image.load("eraser.png")
 eraser = pygame.transform.scale(eraser, (70,70))
 
-#Создание квадратов
+#Создание прямоугльников
 def draw_rect(index):
     pygame.draw.rect(screen, colors[index], (index*40, 0, 40, 40))
 
@@ -41,7 +41,7 @@ def color_pick():
             return GREEN
         elif 80<x<120 and 0<y<40:
             return BLUE
-        elif 120<x<160 and 0<y<40:
+        elif 120<x<160 and 0<y<60:
             return "rect"
         elif 160<x<200 and 0<y<40:
             return "circle"
@@ -57,7 +57,7 @@ def painting(color):
         if color != "rect" and color != "circle" and color != BLACK:
             pygame.draw.circle(screen, color, (x,y), radius)
         elif color == "rect":
-            pygame.draw.rect(screen, WHITE, (x,y, 40, 40), 4) 
+            pygame.draw.rect(screen, WHITE, (x,y, 40, 60), 4) 
         elif color == "circle":
             pygame.draw.circle(screen, WHITE, (x,y), 20, 4)
         elif color == BLACK:
@@ -78,7 +78,7 @@ while not done:
             draw_rect(i)
         pygame.draw.circle(screen, WHITE, (180,20), 20, 4)
         screen.blit(eraser, (1010, 0))
-        pygame.draw.rect(screen, WHITE, (120, 0, 40, 40), 4)
+        pygame.draw.rect(screen, WHITE, (120, 0, 40, 60), 4)
         
         #выбор цевети рисование
         color = color_pick()

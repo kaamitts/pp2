@@ -33,5 +33,6 @@ while True:
     BlitRotateCenter(screen, rightarm, (x,y), minute_angle)
     BlitRotateCenter(screen, leftarm, (x,y), second_angle)
     
+    
     pygame.display.update()
     clock.tick(60)

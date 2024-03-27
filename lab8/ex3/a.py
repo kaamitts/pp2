@@ -47,6 +47,8 @@ def color_pick():
             return "circle"
         elif 1010<=x<=1080 and 0<=y<=70:
             return BLACK 
+        elif 200<x<240 and 0<y<40:
+            return "square"
     return color  
 
 #Сам процесс рисования
@@ -54,7 +56,7 @@ def painting(color):
     click = pygame.mouse.get_pressed()
     x, y = pygame.mouse.get_pos()
     if click[0]:
-        if color != "rect" and color != "circle" and color != BLACK:
+        if color != "rect" and color != "circle" and color != BLACK and color != "square":
             pygame.draw.circle(screen, color, (x,y), radius)
         elif color == "rect":
             pygame.draw.rect(screen, WHITE, (x,y, 40, 60), 4) 

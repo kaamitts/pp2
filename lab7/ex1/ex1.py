@@ -25,13 +25,13 @@ while True:
         elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             exit()
     current_time = datetime.datetime.now()
-    hour_angle = -(current_time.minute * 6)
-    minute_angle = -(current_time.second * 6)
+    minute_angle = -(current_time.minute * 6)
+    second_angle = -(current_time.second * 6)
     
     screen.fill(WHITE)
     screen.blit(mickey, (0,0))
-    BlitRotateCenter(screen, rightarm, (x,y), hour_angle)
-    BlitRotateCenter(screen, leftarm, (x,y), minute_angle)
+    BlitRotateCenter(screen, rightarm, (x,y), minute_angle)
+    BlitRotateCenter(screen, leftarm, (x,y), second_angle)
     
     pygame.display.update()
     clock.tick(60)

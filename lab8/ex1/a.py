@@ -138,8 +138,6 @@ while True:
         DISPLAYSURF.blit(game_over, (90,250))
         
         pygame.display.update()
-        for entity in enemy_and_player:
-            entity.kill()
         time.sleep(1.5)
         pygame.quit()
         sys.exit()

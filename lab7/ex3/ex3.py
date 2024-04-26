@@ -4,6 +4,7 @@
 #i.e. user input that leads the ball to leave of the screen should be ignored
 
 import pygame
+
 import os
 pygame.init()
 
@@ -27,7 +28,7 @@ while not done:
         x -= 20
     if pressed[pygame.K_RIGHT] and x + 20 <= screen.get_width() - radius:
         x += 20
-        
+               
     screen.fill((0, 0, 0))
     color = (255, 50, 0)
     pygame.draw.circle(screen, color, (x, y), radius)

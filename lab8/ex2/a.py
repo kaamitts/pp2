@@ -36,7 +36,7 @@ class SnakeBlock():
     
     def is_inside(self):
         return 0<=self.x<COUNT_BLOCKS and 0<=self.y<COUNT_BLOCKS
-    
+    #При сталкновений с собой игра оканчивается, а при поедания еды увеличивается
     def __eq__(self, other):
         return isinstance(other, SnakeBlock) and self.x == other.x and self.y == other.y
     

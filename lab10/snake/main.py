@@ -2,6 +2,7 @@ import pygame
 import time
 import random
 import psycopg2
+from pygame.locals import *
 
 # Подключение к базе данных
 connection = psycopg2.connect(
@@ -17,14 +18,12 @@ cur = connection.cursor()
 # Создание таблицы пользователей и счетов
 cur.execute("""CREATE TABLE IF NOT EXISTS users (
     username VARCHAR(255) PRIMARY KEY,
-    current_level INT DEFAULT 1
-);
+    current_level INT DEFAULT 1);
 """)
 
 cur.execute("""CREATE TABLE IF NOT EXISTS user_score (
     username VARCHAR(255) PRIMARY KEY,
-    score INT DEFAULT 0
-);
+    score INT DEFAULT 0);
 """)
 # Размер окна
 window_x = 720
@@ -164,7 +163,7 @@ def update_user_score(user_name):
 def get_user_level(user_name):
     cur.execute("SELECT current_level FROM users WHERE username='{}'".format(user_name))
     data = cur.fetchone()
-    return data[0]
+    return data[1]
 
 # Функция для установки текущего уровня пользователя
 def set_user_level(user_name, level):
@@ -204,20 +203,20 @@ while True:
     # Обработка событий
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP:
+            if event.key == K_UP:
                 change_to = 'UP'
-            elif event.key == pygame.K_DOWN:
+            elif event.key == K_DOWN:
                 change_to = 'DOWN'
-            elif event.key == pygame.K_LEFT:
+            elif event.key == K_LEFT:
                 change_to = 'LEFT'
-            elif event.key == pygame.K_RIGHT:
+            elif event.key == K_RIGHT:
                 change_to = 'RIGHT'
-            elif event.key == pygame.K_p:
+            elif event.key == K_p:
                 # При нажатии клавиши "p" игра приостанавливается
                 paused = True
                 while paused:
                     for event in pygame.event.get():
-                        if event.type == pygame.KEYDOWN and event.key == pygame.K_p:
+                        if event.type == KEYDOWN and event.key == K_p:
                             # При повторном нажатии "p" игра возобновляется
                             paused = False
 
